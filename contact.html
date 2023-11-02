@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <style>
+        .faq {
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            width: 50%;
+            height: 15%;
+        }
+
+        .faq-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq.active .faq-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="faq">
+        <div class="faq-heading">
+            <h2>What payment modes do you accept?</h2>
+            <button class="toggle-button">+</button>
+        </div>
+        <div class="faq-content">
+            <p>We accept online payments of all kinds. We have an excellent online portal where you can make a payment
+                using debit cards, credit cards, net banking, UPI, Wallets, and even international cards and Amex cards.
+                We do NOT accept cash or cheque payments.</p>
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="faq-heading">
+            <h2>My transaction failed. What should I do?</h2>
+            <button class="toggle-button">+</button>
+        </div>
+        <div class="faq-content">
+            <p>If your transaction has failed, please contact us by mailing us at info@peekpioneer.com. We will review
+                the transaction and guide you through the next steps in the next 24 hours.</p>
+        </div>
+    </div>
+
+    <script>const toggleButtons = document.querySelectorAll('.toggle-button');
+        const faqItems = document.querySelectorAll('.faq');
+
+        toggleButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                faqItems[index].classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <style>
+        body {
+            background-image: url(https://images.unsplash.com/photo-1642498709557-b1bd711dd68b?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            margin-left: 55%;
+            margin-top: -23%;
+        }
+
+        .card p {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .bg-gray {
+            background: #f2f2f2;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .pf-c-form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        select.pf-c-form-control {
+            appearance: none;
+            background: url('down-arrow.png') no-repeat;
+            background-position: 95% center;
+        }
+
+        .validation-message {
+            color: #e74c3c;
+            display: none;
+            font-size: 14px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .card-body h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card-body h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .card-body .card-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .card-logo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        span h1 {
+            border-bottom: 2px solid rgb(136, 124, 90);
+            padding-bottom: 7px;
+            text-align: center;
+        }
+
+        .login {
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            width: 40%;
+            height: 50%;
+            margin-left: 2%;
+
+        }
+
+        .login input {
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        input:hover {
+            background-color: #ccc;
+            margin-top: 3px;
+        }
+
+        .login button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .login button:hover {
+            background-color: #0056b3;
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>
+        <h1>Start Your Trek Registration Process </h1>
+    </span>
+    <div class="login">
+        <h2 style="border-bottom:2px solid #555 ;">Login</h2>
+        <form action="submit">
+            <input type="text" placeholder="EmailId/MobileNo"><br><br>
+            <input type="password" placeholder="password"><br><br>
+            <button>Login</button>
+        </form>
+    </div>
+    <div class="card register-box-border my-4">
+        <div class="card-body">
+            <p class="p-text-1-franklin m-0">New to peakpioneers?</p>
+            <p class="p-text-1-franklin m-0">Register here</p>
+
+            <div class="bg-gray" style="padding: 5px; background: #f2f2f2; margin-top: 30px;">
+                <form onsubmit="createUser(event)" id="mf">
+                    <div class="form-group" style="margin-bottom: 3px;">
+                        <input tabindex="5" class="pf-c-form-control" name="firstName" value="" type="text"
+                            placeholder="First name" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="6" class="pf-c-form-control" name="lastName" value="" type="text"
+                            placeholder="Last name" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <select class="pf-c-form-control" name="gender" tabindex="7" required="">
+                            <option selected="" disabled="" value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="8" class="pf-c-form-control" placeholder="Date of birth" name="dob" value=""
+                            type="text" onmouseover="(this.type='date')" onfocus="(this.type='date')"
+                            onblur="(this.type='text')" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <select name="height" id="cars" class="pf-c-form-control" onchange="getHeight(this)"
+                            tabindex="9" required="">
+                            <option selected="" disabled="" value="">Select Height</option>
+                            <option value="121">4’ 0”</option>
+                            <!-- Add more height options here -->
+                        </select>
+                        <span id="heightValid" class="validation-message" style="display: none;">Please enter valid
+                            data</span>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="10" minlength="2" maxlength="5" class="pf-c-form-control" name="weight"
+                            value="" type="text" placeholder="Weight (in Kg)" onkeyup="getWeight(this)" required="">
+                        <span id="weightValid" class="validation-message" style="display: none;">Please enter valid
+                            data</span>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input id="bmiValue" tabindex="11" class="pf-c-form-control" value="" name="bmi" type="hidden"
+                            placeholder="BMI" disabled="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="12" maxlength="10" class="pf-c-form-control" name "phone" value=""
+                            type="number" placeholder="Phone number" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="13" class="pf-c-form-control" name="email" value="" type="email"
+                            placeholder="Email Id" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="14" class="pf-c-form-control" name="city" value="" type="text"
+                            placeholder="City" required="">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 4px;">
+                        <input tabindex="15" class="pf-c-form-control" name="occupation" value="" type="text"
+                            placeholder="Occupation" required="">
+                    </div>
+                    <div id="kc-form-buttons" class="form-group">
+                        <input tabindex="16" class="pf-c-button pf-m-primary pf-m-block btn-lg btn btn-ih-yellow"
+                            name="login" id="kc-login" type="submit" value="Create account">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 
 nav {
     background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
+    
     justify-content: space-between;
     align-items: center;
     padding: 14px 16px;
@@ -12,6 +12,20 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    margin-left: 55%;
+    margin-top: 1%;
+
+}
+
+nav img {
+    width: 10%;
+    mix-blend-mode: multiply;
+
+}
+
+nav img:hover {
+    margin-top: 1px;
+    margin-left: 5px;
 }
 
 li a {
@@ -22,7 +36,9 @@ li a {
 }
 
 li a:hover {
+    background-color: #222;
     color: #85b6e6;
+    text-decoration: none;
 }
 
 .main {
@@ -105,15 +121,7 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-img {
-    width: 10%;
-    mix-blend-mode: multiply;
-}
 
-nav img:hover {
-    margin-top: 1px;
-    margin-left: 5px;
-}
 
 .trailer {
     width: 100%;
@@ -139,11 +147,11 @@ nav img:hover {
     background-color: #fff;
 }
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 html, body {
     width: 100%;
